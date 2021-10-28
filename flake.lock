@@ -79,12 +79,29 @@
         "type": "github"
       }
     },
+    "plutus-apps": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1635351079,
+        "narHash": "sha256-zpYzXOr68MVwvo2Sb5uvIW4suBg4GfICC8G5Zvb7pyQ=",
+        "owner": "input-output-hk",
+        "repo": "plutus-apps",
+        "rev": "c086c89af9c0add3a3b6a744dcb260f545ee95b4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "input-output-hk",
+        "repo": "plutus-apps",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "gitignore-nix": "gitignore-nix",
         "nixpkgs": "nixpkgs_2",
-        "npmlock2nix": "npmlock2nix"
+        "npmlock2nix": "npmlock2nix",
+        "plutus-apps": "plutus-apps"
       }
     }
   },
