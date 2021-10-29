@@ -5,7 +5,7 @@
   },
   {
     "question": "What is Marlowe?",
-    "answer": "Marlowe is a new language developed by IOHK for writing and executing financial contracts on blockchain. It is a domain-specific language (DSL) designed for the financial industry. Read our <a href='https://docs.cardano.org/en/latest/marlowe/marlowe-explainer.html'>Marlowe explainer</a> to learn more or jump straight into our <a href='https://play.marlowe-finance.io/doc/marlowe/tutorials/index.html'>Marlowe tutorials</a>."
+    "answer": "Marlowe is a new language developed by IOHK for writing and executing financial contracts on blockchain. It is a domain-specific language (DSL) designed for the financial industry. Read our <a target='_blank' onclick='event.stopPropagation();' href='https://docs.cardano.org/marlowe/learn-about-marlowe'>Marlowe explainer</a> to learn more or jump straight into our <a target='_blank' onclick='event.stopPropagation();' href='https://play.marlowe-finance.io/doc/marlowe/tutorials/index.html'>Marlowe tutorials</a>."
   },
   {
     "question": "What is a smart contract?",
