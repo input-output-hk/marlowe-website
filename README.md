@@ -19,4 +19,7 @@ $ npm run build
 
 ## Deployment
 
-TBD
+The Marlowe website is automatically deployed upon certain pushes to GitHub
+
+* [Staging](https://marlowe-website-staging.plutus.aws.iohkdev.io/) is deployed from every commit pushed to `master` (this URL subject to change)
+* [Production](https://marlowe-finance.io) is deployed from every commit pushed to `production`
