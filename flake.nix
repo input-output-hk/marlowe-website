@@ -20,7 +20,7 @@
   };
 
   outputs = { self, flake-utils, nixpkgs, npmlock2nix, gitignore-nix, plutus-apps }:
-  flake-utils.lib.simpleFlake {
+  (flake-utils.lib.simpleFlake {
     inherit self nixpkgs;
 
     name = "marlowe-website";
@@ -50,6 +50,10 @@
           root = final.marlowe-website.marlowe-website;
         };
       };
+    };
+  }) // {
+    hydraJobs.x86_64-linux = {
+      inherit (self.legacyPackages.x86_64-linux) marlowe-website;
     };
   };
 }
