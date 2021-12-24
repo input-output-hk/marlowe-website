@@ -48,6 +48,7 @@
 
         marlowe-website-entrypoint = staticSite {
           root = final.marlowe-website.marlowe-website;
+          port-name = "marlowe_website";
         };
       };
     };

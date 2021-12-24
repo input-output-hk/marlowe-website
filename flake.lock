@@ -82,11 +82,11 @@
     "plutus-apps": {
       "flake": false,
       "locked": {
-        "lastModified": 1635351079,
-        "narHash": "sha256-zpYzXOr68MVwvo2Sb5uvIW4suBg4GfICC8G5Zvb7pyQ=",
+        "lastModified": 1640364395,
+        "narHash": "sha256-q+neKzIYSzccmYl/u+hj6rsuKWTEEVGu8+mIqw8Rf7M=",
         "owner": "input-output-hk",
         "repo": "plutus-apps",
-        "rev": "c086c89af9c0add3a3b6a744dcb260f545ee95b4",
+        "rev": "57d10773c793fbdb7dc623c5923ef0c07a70c957",
         "type": "github"
       },
       "original": {
