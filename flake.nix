@@ -17,9 +17,11 @@
       url = "github:input-output-hk/plutus-apps";
       flake = false;
     };
+
+    tullia.url = "github:input-output-hk/tullia";
   };
 
-  outputs = { self, flake-utils, nixpkgs, npmlock2nix, gitignore-nix, plutus-apps }:
+  outputs = { self, flake-utils, nixpkgs, npmlock2nix, gitignore-nix, plutus-apps, tullia }:
   (flake-utils.lib.simpleFlake {
     inherit self nixpkgs;
 
@@ -52,9 +54,32 @@
         };
       };
     };
-  }) // {
-    hydraJobs.x86_64-linux = {
-      inherit (self.legacyPackages.x86_64-linux) marlowe-website;
-    };
+  }) // (
+    let
+      linuxTulliaOutputs = tullia.fromSimple
+        "x86_64-linux"
+        (import ./nix/tullia.nix self "x86_64-linux");
+    in
+    {
+      hydraJobs.x86_64-linux = {
+        inherit (self.legacyPackages.x86_64-linux) marlowe-website;
+      };
+      # Add specific jobs output for tullia to parse
+      ciJobs = self.hydraJobs;
+      tullia.x86_64-linux = linuxTulliaOutputs.tullia;
+      cicero.x86_64-linux = linuxTulliaOutputs.cicero;
+    }
+  );
+
+  nixConfig = {
+    extra-substituters = [
+      "https://cache.iog.io"
+      "https://hydra.iohk.io"
+    ];
+    extra-trusted-public-keys = [
+      "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+    ];
+    allow-import-from-derivation = true;
+    accept-flake-config = true;
   };
 }
